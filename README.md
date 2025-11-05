@@ -1,29 +1,18 @@
-# 🐳 Práctica Entrega Continua
+## 🚀 Despliegue Automático con GitHub Actions, Docker y Render
 
-### Autor:
-**Gaudi Valera**
+Este proyecto implementa un flujo completo de **Integración y Despliegue Continuo (CI/CD)**.  
+Cada vez que se realiza un push en la rama `main`, GitHub Actions ejecuta automáticamente los siguientes pasos:
+
+1. **Construye** la imagen Docker del proyecto.
+2. **Publica** la imagen en Docker Hub.
+3. **Despliega** automáticamente la aplicación en **Render** utilizando las credenciales configuradas como secretos (`DOCKER_USERNAME`, `DOCKER_PASSWORD`, `RENDER_SERVICE_ID` y `RENDER_API_KEY`).
+
+La aplicación se ejecuta en un contenedor Docker que expone un servidor Node.js básico.  
+Puedes acceder a la versión desplegada en línea aquí:  
+👉 [https://hola-gaudi.onrender.com](https://hola-gaudi.onrender.com)
 
 ---
 
-## Descripción
-
-En esta práctica se implementó el **ciclo completo de DevOps** utilizando **Node.js** y **Docker**.  
-El objetivo fue crear una aplicación web simple que muestre el mensaje **“Hola Gaudi”**, construir una imagen Docker a partir de ella y luego **publicarla en Docker Hub**.
-
----
-
-### Crear la aplicación web con Node.js
-
-**Archivo:** `app.js`
-
-```js
-const express = require('express');
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('<h1>Hola Gaudi</h1>');
-});
-
-app.listen(3000, () => {
-  console.log('Servidor corriendo en http://localhost:3000');
-});
+**Autor:** Gaudi Valera  
+**Materia:** Electiva 2  
+**Práctica:** Entrega Continua - CI/CD con GitHub Actions, Docker y Render.
